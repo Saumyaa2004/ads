@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
+from sklearn.neighbors import LocalOutlierFactor
+
+# data
+X = load_iris().data[:, :2]   # only 2 features for easy plotting
+
+# model
+lof = LocalOutlierFactor(n_neighbors=20, contamination=0.1)
+labels = lof.fit_predict(X)   # -1 = outlier, 1 = normal
+
+# plot
+plt.scatter(X[:, 0], X[:, 1], c=labels)
+plt.title("LOF Outlier Detection")
+plt.xlabel("Sepal Length")
+plt.ylabel("Sepal Width")
+plt.show()
