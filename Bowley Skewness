@@ -1,0 +1,11 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+x = sns.load_dataset('tips')['total_bill']
+q1, q2, q3 = x.quantile([.25, .5, .75])
+
+B = (q1 + q3 - 2*q2) / (q3 - q1)
+
+sns.boxplot(x=x)
+plt.title(f"Bowley Skewness: {B:.2f}")
+plt.show()
