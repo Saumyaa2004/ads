@@ -1,0 +1,26 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# data
+df = sns.load_dataset('iris')
+
+# 1. scatter plot
+sns.scatterplot(data=df, x='sepal_length', y='sepal_width', hue='species')
+plt.title("Scatter")
+plt.show()
+
+# 2. pairplot
+sns.pairplot(df, hue='species')
+plt.show()
+
+# 3. bubble chart
+sns.scatterplot(data=df, x='sepal_length', y='sepal_width',
+                size='petal_length', hue='species')
+plt.title("Bubble Chart")
+plt.show()
+
+# 4. 2D density
+sns.kdeplot(data=df, x='sepal_length', y='sepal_width',
+            hue='species', fill=True)
+plt.title("Density")
+plt.show()
