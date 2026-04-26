@@ -1,0 +1,23 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# data
+x = sns.load_dataset('tips')['total_bill']
+
+# figure with 3 plots
+fig, ax = plt.subplots(3, 1, figsize=(8, 10))
+
+# histogram + KDE
+sns.histplot(x, bins=20, kde=True, ax=ax[0])
+ax[0].set_title("Histogram")
+
+# boxplot
+sns.boxplot(x=x, ax=ax[1])
+ax[1].set_title("Boxplot")
+
+# KDE
+sns.kdeplot(x, fill=True, ax=ax[2])
+ax[2].set_title("KDE")
+
+plt.tight_layout()
+plt.show()
