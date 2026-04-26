@@ -1,0 +1,14 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+from scipy.stats import skew, kurtosis
+
+x = sns.load_dataset('tips')['total_bill']
+
+s = skew(x)
+k = kurtosis(x)
+
+plt.hist(x, bins=30)
+plt.title(f"Skewness: {s:.2f} | Kurtosis: {k:.2f}")
+plt.show()
+
+print(s, k)
