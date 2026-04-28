@@ -9,3 +9,42 @@ B = (q1 + q3 - 2*q2) / (q3 - q1)
 sns.boxplot(x=x)
 plt.title(f"Bowley Skewness: {B:.2f}")
 plt.show()
+
+
+
+📊 Bowley’s Skewness — Definition & Theory
+📌 Definition
+
+Bowley’s coefficient of skewness is a measure of the asymmetry of a distribution based on quartiles.
+Sk = (Q3 + Q1 - 2Q2) / (Q3 - Q1)
+here:
+
+Q1 = First Quartile
+Q2 = Median
+Q3 = Third Quartile
+
+Theory
+
+Bowley’s skewness is based on the relative position of the median between Q1 and Q3.
+
+In a symmetrical distribution, the median lies exactly midway between Q1 and Q3.
+If the median is not centered, the distribution is skewed.
+
+It compares the spread of:
+
+Upper half → (Q3 − Q2)
+Lower half → (Q2 − Q1)
+
+If both spreads are equal, the distribution is symmetric. Otherwise, skewness exists.
+Interpretation
+Sk = 0 → Symmetrical distribution
+Sk > 0 → Positively skewed (right tail longer)
+Sk < 0 → Negatively skewed (left tail longer)
+Advantages
+Not affected much by extreme values (outliers)
+Suitable for open-ended distributions
+Simple to understand and compute
+Limitations
+Uses only quartiles, ignoring the rest of the data
+Less precise compared to other skewness measures
+
